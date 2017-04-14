@@ -72,13 +72,13 @@ If you have your own snippets you want to have called at the header simply add t
 
 ## Setting
 
-You can set these in your `site/config/config.php`.
+You can set these in your `site/config/config.php` or in your template code since `$page` has to exist.
 
 ### plugin.htmlhead.snippets
 - default: []
 - this will call all snippets of this plugin. add the filename of your snippet without its extension.
 
-### plugin.htmlhead.seo
+### plugin.htmlhead.seo (template only)
 - default:
 ```php
 c::set('plugin.htmlhead.seo', [
@@ -89,8 +89,9 @@ c::set('plugin.htmlhead.seo', [
 ```
 
 - you can use a [Kirby Page Model](https://getkirby.com/docs/developer-guide/advanced/models) or [Kirby Page Methods](https://getkirby.com/docs/developer-guide/objects/page) to provide the values `head_author` and `head_description` easily – see examples below.
+- if you need more control consider using [kirby-meta-tags](https://github.com/pedroborges/kirby-meta-tags) instead.
 
-### plugin.htmlhead.opengraph
+### plugin.htmlhead.opengraph (template only)
 - default:
 ```php
 c::set('plugin.htmlhead.opengraph', [
@@ -105,6 +106,7 @@ c::set('plugin.htmlhead.opengraph', [
 ]);
 ```
 - set to `false` you do not need opengraph from this plugin. you can use a [Kirby Page Models](https://getkirby.com/docs/developer-guide/advanced/models) or [Kirby Page Methods](https://getkirby.com/docs/developer-guide/objects/page) to provide the values `head_author` and `head_description` easily – see examples below.
+- if you need more control consider using [kirby-meta-tags](https://github.com/pedroborges/kirby-meta-tags) instead.
 
 ### plugin.htmlhead.feed
 - default: false
