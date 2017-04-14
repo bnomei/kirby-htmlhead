@@ -1,0 +1,8 @@
+{
+  "name": "kirby-htmlhead",
+  "description": "Kirby Page Method to add code into the HTML Head using snippets",
+  "version": "0.5.0",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "author": "Bruno Meilick"
+}
