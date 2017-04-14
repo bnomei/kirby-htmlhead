@@ -72,7 +72,7 @@ If you have your own snippets you want to have called at the header simply add t
 
 ## Setting
 
-You can set these in your `site/config/config.php`. Value can be a string or closure where noted.
+You can set these in your `site/config/config.php`.
 
 ### plugin.htmlhead.snippets
 - default: []
@@ -86,7 +86,9 @@ c::set('plugin.htmlhead.seo', [
   'description' => str::unhtml($page->head_description()),
   'robots'      => 'index, follow, noodp',
 ]);
-- you can override these per at the head of each template if needed or use [Kirby Page Models](https://getkirby.com/docs/developer-guide/advanced/models) to provide a page object with these values.
+```
+
+- you can use a [Kirby Page Model](https://getkirby.com/docs/developer-guide/advanced/models) or [Kirby Page Methods](https://getkirby.com/docs/developer-guide/objects/page) to provide the values `head_author` and `head_description` easily – see examples below.
 
 ### plugin.htmlhead.opengraph
 - default:
@@ -102,7 +104,7 @@ c::set('plugin.htmlhead.opengraph', [
   'article:author'    => str::unhtml($page->head_author()),
 ]);
 ```
-- set to `false` you do not need opengraph from this plugin. you can use a [Kirby Page Models](https://getkirby.com/docs/developer-guide/advanced/models) or [Kirby Page Methods](https://getkirby.com/docs/developer-guide/objects/page) to provide these values easily.
+- set to `false` you do not need opengraph from this plugin. you can use a [Kirby Page Models](https://getkirby.com/docs/developer-guide/advanced/models) or [Kirby Page Methods](https://getkirby.com/docs/developer-guide/objects/page) to provide the values `head_author` and `head_description` easily – see examples below.
 
 ### plugin.htmlhead.feed
 - default: false
@@ -134,8 +136,8 @@ c::set('plugin.htmlhead.opengraph', [
 
 ## Examples
 
-- [Kirby Page Methods](https://github.com/bnomei/kirby-htmlhead/blob/master/examples/pagemethods.php)
-- [Kirby Page Model](https://github.com/bnomei/kirby-htmlhead/blob/master/examples/pagemodel.php)
+- [Kirby Page Methods Example](https://github.com/bnomei/kirby-htmlhead/blob/master/examples/pagemethods.php)
+- [Kirby Page Model Example](https://github.com/bnomei/kirby-htmlhead/blob/master/examples/pagemodel.php)
 
 ## Disclaimer
 
@@ -151,7 +153,3 @@ It is discouraged to use this plugin in any project that promotes racism, sexism
 
 Technical support is provided on GitHub only. No representations or guarantees are made regarding the response time in which support questions are answered. But you can also join the discussions in the [Kirby Forum](https://forum.getkirby.com/search?q=kirby-htmlhead).
 
-## Credits
-
-Kirby Styledmap is developed and maintained by Bruno Meilick, a game designer & web developer from Germany.
-I want to thank [Fabian Michael](https://github.com/fabianmichael) for inspiring me a great deal and [Julian Kraan](http://juliankraan.com) for telling me about Kirby in the first place.
