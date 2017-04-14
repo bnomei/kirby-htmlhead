@@ -6,7 +6,7 @@ Kirby Page Method to add code into the HTML Head using snippets.
 
 ## Key Features
 
-- basic metags
+- basic metatags
 - rss feed
 - opengraph
 - google analytics with anonymize IP
