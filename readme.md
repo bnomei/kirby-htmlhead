@@ -4,6 +4,8 @@
 
 Kirby Page Method to add code into the HTML Head using snippets.
 
+This plugin is free but if you use it in a commercial project please consider to [make a donation 🍻](https://www.paypal.me/bnomei/5).
+
 ## Key Features
 
 - basic metatags
