@@ -2,7 +2,7 @@
     $htmlhead_googleanalytics = c::get('plugin.htmlhead.googleanalytics', 'UA-');
     $htmlhead_googleanalytics_anonymizeIp = c::get('plugin.htmlhead.googleanalytics.anonymizeIp', true);
 
-    if(!is_localhost() && strlen($gakey) > strlen("UA-") ): ?>
+    if(!KirbyHTMLHead::is_localhost() && strlen($gakey) > strlen("UA-") ): ?>
     <!-- Google Analytics -->
     <script type="text/javascript">
     var gaProperty = '<?php echo $gakey ?>';
