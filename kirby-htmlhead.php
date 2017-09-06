@@ -5,7 +5,7 @@ class KirbyHTMLHead {
   static $snippets = [];
   static function snippets($page) {
     $return = [];
-    
+
     $indent = c::get('plugin.htmlhead.indent', '    ');
     $customSnippets = c::get('plugin.htmlhead.snippets', []);
     if(!is_array($customSnippets)) $customSnippets = [];
@@ -51,12 +51,12 @@ foreach ($snippets->files() as $file) {
   PAGE METHODS
  ***************************************/
 
-$kirby->set('page::method', 'htmlhead_snippets', 
+$kirby->set('page::method', 'htmlhead_snippets',
   function($page) {
     return KirbyHTMLHead::snippets($page);
 });
 
-$kirby->set('page::method', 'htmlhead_alpha', 
+$kirby->set('page::method', 'htmlhead_alpha',
   function($page, $title = null) {
     $firstmetatags = [
       '<meta charset="utf-8">',
@@ -80,13 +80,13 @@ $kirby->set('page::method', 'htmlhead_alpha',
     return implode($firstmetatags).PHP_EOL;
   });
 
-$kirby->set('page::method', 'htmlhead_omega', 
+$kirby->set('page::method', 'htmlhead_omega',
   function($page, $title = null) {
     $firstmetatags = [
       '<meta charset="utf-8">',
       '<meta http-equiv="x-ua-compatible" content="ie=edge">',
       '<meta name="viewport" content="width=device-width, initial-scale=1">',
-      '<meta http-equiv="content-type" content="text/html; charset=utf-8" />',
+      // '<meta http-equiv="content-type" content="text/html; charset=utf-8" />',
       '<base href="'.site()->url().'">',
       '<link rel="canonical" href="'.$page->url().'">',
       // '<meta name="generator" content="kirby cms">',
