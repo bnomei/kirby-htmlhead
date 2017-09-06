@@ -56,7 +56,6 @@ In any template or your `header` snippet call the page method right after the ta
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <base href="<?= site()->url() ?>'">'
 <link rel="canonical" href="<?= $page->url() ?>">'
 <title><?= $page->title() ?></title>
