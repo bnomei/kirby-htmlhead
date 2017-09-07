@@ -1,11 +1,10 @@
-	<?php 
+	<?php
     $htmlhead_googleanalytics = c::get('plugin.htmlhead.googleanalytics', 'UA-');
     $htmlhead_googleanalytics_anonymizeIp = c::get('plugin.htmlhead.googleanalytics.anonymizeIp', true);
 
-    if(!KirbyHTMLHead::is_localhost() && strlen($gakey) > strlen("UA-") ): ?>
-    <!-- Google Analytics -->
+    if(!KirbyHTMLHead::is_localhost() && strlen($htmlhead_googleanalytics) > strlen("UA-") ): ?>
     <script type="text/javascript">
-    var gaProperty = '<?php echo $gakey ?>';
+    var gaProperty = '<?php echo $htmlhead_googleanalytics ?>';
     var disableStr = 'ga-disable-' + gaProperty;
     if (document.cookie.indexOf(disableStr + '=true') > -1) { window[disableStr] = true;
     }
@@ -18,7 +17,7 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', '<?php echo $gakey ?>', 'auto');
+      ga('create', '<?php echo $htmlhead_googleanalytics ?>', 'auto');
       <?php if($htmlhead_googleanalytics_anonymizeIp): ?>
       ga('set', 'anonymizeIp', true);
       <?php endif; ?>
